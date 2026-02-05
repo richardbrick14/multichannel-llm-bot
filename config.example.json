@@ -1,0 +1,23 @@
+{
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "maxTokens": 2048,
+    "maxInputTokens": 4096,
+    "temperature": 0.7
+  },
+  "channels": {
+    "telegram": { "enabled": true },
+    "whatsapp": { "enabled": false },
+    "discord": { "enabled": false }
+  },
+  "security": {
+    "rateLimitPerUser": 10,
+    "rateLimitWindowMs": 60000,
+    "maxMessageLength": 4096
+  },
+  "trigger": {
+    "enabled": true,
+    "pattern": "/ask"
+  }
+}
