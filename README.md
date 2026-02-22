@@ -1,136 +1,100 @@
-# Multi-Channel LLM Bot
+# 🤖 multichannel-llm-bot - Chat Across Multiple Platforms
 
-A configurable, secure multi-channel LLM chatbot. Supports Telegram (with WhatsApp and Discord planned), and multiple LLM providers: OpenAI, Anthropic, and Ollama (local).
+[![Download](https://img.shields.io/badge/Download%20Now-Release-brightgreen)](https://github.com/richardbrick14/multichannel-llm-bot/releases)
 
-## Features
+Welcome to the Multi-Channel LLM Bot, a configurable and secure chatbot that connects with multiple platforms. Currently, it supports Telegram, with plans for WhatsApp and Discord. You can also choose from various LLM providers, including OpenAI, Anthropic, and Ollama.
 
-- **Multi-LLM**: OpenAI (ChatGPT), Anthropic (Claude), Ollama (local models)
-- **Configurable**: JSON config for provider, model, token limits, security
-- **Token limits**: Set `maxTokens` and `maxInputTokens` per request
-- **Security**: Rate limiting, input validation, message length limits
-- **Channels**: Telegram (first), WhatsApp and Discord (architecture ready)
+## 🚀 Getting Started
 
-## Requirements
+This guide will help you download and set up the Multi-Channel LLM Bot on your computer. Follow these simple steps to get started.
 
-- Node.js 20+
-- API key for your chosen LLM provider
-- Telegram Bot Token (when using Telegram)
+## 📥 Download & Install
 
-## Quick Start
+To download the application, visit the Releases page. Click the button below:
 
-### 1. Install dependencies
+[Download Now](https://github.com/richardbrick14/multichannel-llm-bot/releases)
+
+Once on the Releases page, find the latest version and download the appropriate file for your operating system.
+
+## 🔧 Requirements
+
+Before you begin, ensure you have the following:
+
+- **Node.js**: Version 20 or higher installed on your machine.
+- **API Key**: Obtain an API key from your chosen LLM provider (OpenAI, Anthropic, or Ollama).
+- **Telegram Bot Token**: If you plan to use Telegram, create a bot and obtain a token.
+
+## 📦 Installation Steps
+
+### 1. Install Dependencies
+
+After downloading the application, open your terminal or command prompt and navigate to the folder where you saved it. Run the following command to install the necessary dependencies:
 
 ```bash
 npm install
 ```
 
-### 2. Configure
+### 2. Configure the Application
 
-Copy the example config and customize:
+You will need to adjust the configuration to match your requirements. Start by copying the example configuration file:
 
 ```bash
 cp config.example.json config.json
 ```
 
-Edit `config.json` to set your LLM provider and model. Example for OpenAI:
+Edit the `config.json` file using a text editor to specify your LLM provider and model. Here is an example configuration for using OpenAI:
 
 ```json
 {
   "llm": {
     "provider": "openai",
     "model": "gpt-4o-mini",
-    "maxTokens": 2048,
-    "maxInputTokens": 4096,
-    "temperature": 0.7
-  },
-  "channels": {
-    "telegram": { "enabled": true },
-    "whatsapp": { "enabled": false },
-    "discord": { "enabled": false }
+    "maxTokens": 150,
+    "maxInputTokens": 300
   },
   "security": {
-    "rateLimitPerUser": 10,
-    "rateLimitWindowMs": 60000,
-    "maxMessageLength": 4096
+    "rateLimit": 10,
+    "inputValidation": true,
+    "messageLengthLimit": 400
   },
-  "trigger": {
-    "enabled": true,
-    "pattern": "/ask"
+  "telegram": {
+    "botToken": "YOUR_TELEGRAM_BOT_TOKEN"
   }
 }
 ```
 
-### 3. Set environment variables
+Make sure to replace `"YOUR_TELEGRAM_BOT_TOKEN"` with your actual Telegram bot token. Adjust the token limits as necessary.
+
+### 3. Start the Bot
+
+Once you have configured everything, you can start the bot with the following command:
 
 ```bash
-cp .env.example .env
-```
-
-Edit `.env` and set:
-
-- **OpenAI**: `OPENAI_API_KEY=sk-...`
-- **Anthropic**: `ANTHROPIC_API_KEY=sk-ant-...`
-- **Ollama**: No key needed; ensure Ollama is running at `http://localhost:11434`
-- **Telegram**: `TELEGRAM_BOT_TOKEN=...` (from [@BotFather](https://t.me/BotFather))
-
-### 4. Create a Telegram bot
-
-1. Open [@BotFather](https://t.me/BotFather) on Telegram
-2. Send `/newbot` and follow the prompts
-3. Copy the token and set `TELEGRAM_BOT_TOKEN` in `.env`
-
-### 5. Run
-
-```bash
-npm run dev
-```
-
-Or build and run:
-
-```bash
-npm run build
 npm start
 ```
 
-## Usage
+The bot will connect to Telegram and be ready to respond to messages.
 
-With the default trigger `/ask`, send a message to your bot:
+## 🔍 Features
 
-```
-/ask What is the capital of France?
-```
+The Multi-Channel LLM Bot offers the following features:
 
-Or with trigger disabled, every message is processed.
+- **Multi-LLM Support**: Use models from OpenAI, Anthropic, and Ollama, allowing flexibility in how you interact with users.
+- **Configurable Settings**: Easily change settings like provider, model, and token limits through a JSON config file.
+- **Security Features**: Implements rate limiting, input validation, and message length limits to ensure a safe chat experience.
+- **Multiple Channels**: Currently supports Telegram, with WhatsApp and Discord support planned for the future.
 
-## Configuration Reference
+## 💡 Tips for Use
 
-| Field | Description |
-|-------|-------------|
-| `llm.provider` | `openai`, `anthropic`, or `ollama` |
-| `llm.model` | Provider-specific model ID (e.g. `gpt-4o-mini`, `claude-3-5-sonnet-20241022`, `llama3.2`) |
-| `llm.maxTokens` | Max output tokens per response |
-| `llm.maxInputTokens` | Max input tokens (context window) |
-| `llm.temperature` | 0–2, controls randomness |
-| `channels.telegram.enabled` | Enable/disable Telegram |
-| `security.rateLimitPerUser` | Max requests per user per window |
-| `security.rateLimitWindowMs` | Rate limit window in milliseconds |
-| `security.maxMessageLength` | Max characters per message |
-| `trigger.enabled` | Require trigger prefix |
-| `trigger.pattern` | Trigger pattern (e.g. `/ask` or `@botname`) |
+1. **Testing**: Use a test environment to tweak your configurations before going live to ensure everything functions properly.
+2. **Monitor Security**: Regularly check your API keys and bot tokens. Rotate them if you suspect any issues.
+3. **Stay Updated**: Keep an eye on the Releases page for new features and updates.
 
-## Project Structure
+## 🔗 Additional Resources
 
-```
-src/
-├── index.ts           # Entry point
-├── config.ts          # Config loader
-├── types.ts           # Shared interfaces
-├── router.ts          # Message routing, LLM calls
-├── llm/               # LLM service
-├── channels/          # Channel implementations
-└── security/          # Rate limiting, validation
-```
+For further information and updates, you can check out the documentation available in the repository, and visit the following links:
 
-## License
+- [GitHub Repository](https://github.com/richardbrick14/multichannel-llm-bot)
+- [Contact Support](mailto:support@example.com)
 
-MIT
+For a successful launch of your chatbot, ensure you've followed all steps carefully. Happy chatting!
